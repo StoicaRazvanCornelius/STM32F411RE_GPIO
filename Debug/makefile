@@ -60,8 +60,8 @@ all: main-build
 main-build: 1_GpioInputOutput.elf secondary-outputs
 
 # Tool invocations
-1_GpioInputOutput.elf 1_GpioInputOutput.map: $(OBJS) $(USER_OBJS) /home/razvan/STM32CubeIDE/workspace_1.16.0/1_GpioInputOutput/STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "1_GpioInputOutput.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/razvan/STM32CubeIDE/workspace_1.16.0/1_GpioInputOutput/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_GpioInputOutput.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+1_GpioInputOutput.elf 1_GpioInputOutput.map: $(OBJS) $(USER_OBJS) C:\Users\razvan\Desktop\stm32\repositories\STM32F411RE_GPIO\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "1_GpioInputOutput.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\razvan\Desktop\stm32\repositories\STM32F411RE_GPIO\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_GpioInputOutput.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
